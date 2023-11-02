@@ -1,7 +1,10 @@
 $(document).ready(function () {
   var saveBtn = document.querySelector(".saveBtn");
   var today = dayjs()
-  $('#currentDay').text(today.format('D MMM  YYYY'));
+  $('#currentDay').text(today.format('D, MMM,  YYYY'));
+  $(function () {
+    
+  });
   
   var currentHour = dayjs().hour();
   function hourTracker() {
@@ -25,8 +28,6 @@ $(document).ready(function () {
     var time = $(this).parent().attr("id");
     localStorage.setItem(time, value);
   })
-
-  $("#hour-8 .description").val(localStorage.getItem("hour-8"));
   $("#hour-9 .description").val(localStorage.getItem("hour-9"));
   $("#hour-10 .description").val(localStorage.getItem("hour-10"));
   $("#hour-11 .description").val(localStorage.getItem("hour-11"));
@@ -38,4 +39,3 @@ $(document).ready(function () {
   $("#hour-17 .description").val(localStorage.getItem("hour-17"));
   hourTracker();
   });
-
